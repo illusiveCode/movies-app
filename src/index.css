@@ -51,7 +51,7 @@ header {
 
 .movie {
     background-color: var(--secondaryColor);
-    width: 300px;
+    width: 243px;
     overflow: hidden;
     position: relative;
     display: flex;
