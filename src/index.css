@@ -1,6 +1,6 @@
 :root {
-    --primaryColor: #050049;
-    --secondaryColor: rgb(33, 85, 118);
+    --primaryColor: #1A1A2E;
+    --secondaryColor: #0F3460;
 }
 
 * {
@@ -42,11 +42,32 @@ header {
     outline: none;
 }
 
+input,
+select,
+textarea {
+    color: #f00;
+}
+
+
 .movie-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 5rem;
+}
+
+.movie-container ::-webkit-scrollbar {
+    width: 8px;
+    height: 10px;
+    /* color: #f00; */
+    background-color: var(--secondaryColor);
+}
+
+.movie-container ::-webkit-scrollbar-thumb {
+    background: white;
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+    /* border-radius: 10px; */
 }
 
 .movie {
@@ -59,10 +80,21 @@ header {
     flex-direction: column;
 }
 
+@media only screen and (max-width: 600px) {
+    .movie {
+        width: 220px;
+    }
+
+    .movie-overview {
+        font-size: 85%;
+    }
+
+}
+
 .movie-overview {
     background-color: var(--secondaryColor);
     color: white;
-    padding: 1rem;
+    padding: 0.5rem;
     position: absolute;
     height: 100%;
     bottom: 0;
@@ -89,7 +121,7 @@ header {
     display: flex !important;
     align-items: center !important;
     justify-content: space-between;
-    padding: 1rem !important;
+    padding: 0.3rem !important;
 }
 
 .movie-info h5 {

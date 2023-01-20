@@ -12,7 +12,7 @@ function App() {
 
   const [popular, setPopular] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
-
+  const handleFocus = (e) => e.target.select();
   useEffect(() => {
     getPopular(POPULAR_API);
   }, [])
@@ -21,7 +21,7 @@ function App() {
     fetch(API)
     .then((res) => res.json())
     .then(res => {
-      console.log(res.results);
+      console.log(res);
       setPopular(res.results)
     });
   };
@@ -43,6 +43,8 @@ function App() {
       <form onSubmit={handleOnSubmit}>
         <header className='fixed-top'>
             <input 
+              style={{color: "#6c757d"}}
+              onFocus={handleFocus}
               className='search rounded-1' 
               type="search" placeholder='search' 
               value={searchTerm} 
